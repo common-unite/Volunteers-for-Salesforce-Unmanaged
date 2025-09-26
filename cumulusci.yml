@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '4.0.1'
+project:
+    name: Volunteers-for-Salesforce-Unmanaged
+    package:
+        name: Volunteers for Salesforce (Unmanaged)
+        api_version: '62.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Volunteers-for-Salesforce-Unmanaged/tests
+            options:
+                outputdir: robot/Volunteers-for-Salesforce-Unmanaged/results
+
+    robot_testdoc:
+        options:
+            path: robot/Volunteers-for-Salesforce-Unmanaged/tests
+            output: robot/Volunteers-for-Salesforce-Unmanaged/doc/Volunteers-for-Salesforce-Unmanaged_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75

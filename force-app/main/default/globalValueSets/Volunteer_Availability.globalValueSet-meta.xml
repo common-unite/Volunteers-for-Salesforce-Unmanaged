@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Weekdays</fullName>
+        <default>false</default>
+        <label>Weekdays</label>
+    </customValue>
+    <customValue>
+        <fullName>Weekends</fullName>
+        <default>false</default>
+        <label>Weekends</label>
+    </customValue>
+    <customValue>
+        <fullName>Morning</fullName>
+        <default>false</default>
+        <label>Morning</label>
+    </customValue>
+    <customValue>
+        <fullName>Afternoon</fullName>
+        <default>false</default>
+        <label>Afternoon</label>
+    </customValue>
+    <customValue>
+        <fullName>Weekly</fullName>
+        <default>false</default>
+        <label>Weekly</label>
+    </customValue>
+    <masterLabel>Volunteer Availability</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

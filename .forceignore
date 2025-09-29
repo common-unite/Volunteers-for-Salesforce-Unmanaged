@@ -10,3 +10,15 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Added by Illuminated Cloud
+/.illuminatedCloud/
+**/*.ts
+**/tsconfig*.json
+**/*.tsbuildinfo
+**/eslint.config.mjs
+**/objects/Campaign.object-meta.xml
+**/objects/Contact.object-meta.xml
+**/objects/Lead.object-meta.xml
+**/profiles/Admin.profile-meta.xml
+**/appMenus/**

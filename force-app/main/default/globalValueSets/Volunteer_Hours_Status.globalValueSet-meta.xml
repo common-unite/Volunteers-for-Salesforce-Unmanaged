@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Prospect</fullName>
+        <default>false</default>
+        <label>Prospect</label>
+    </customValue>
+    <customValue>
+        <fullName>Confirmed</fullName>
+        <default>false</default>
+        <label>Confirmed</label>
+    </customValue>
+    <customValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+    </customValue>
+    <customValue>
+        <fullName>No-Show</fullName>
+        <default>false</default>
+        <label>No-Show</label>
+    </customValue>
+    <customValue>
+        <fullName>Web Sign Up</fullName>
+        <default>false</default>
+        <label>Web Sign Up</label>
+    </customValue>
+    <customValue>
+        <fullName>Canceled</fullName>
+        <default>false</default>
+        <label>Canceled</label>
+    </customValue>
+    <masterLabel>Volunteer Hours Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

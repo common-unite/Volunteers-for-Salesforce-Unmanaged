@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Computer usage</fullName>
+        <default>false</default>
+        <label>Computer usage</label>
+    </customValue>
+    <customValue>
+        <fullName>Manual labor</fullName>
+        <default>false</default>
+        <label>Manual labor</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Fundraising</fullName>
+        <default>false</default>
+        <label>Fundraising</label>
+    </customValue>
+    <customValue>
+        <fullName>Event Planning</fullName>
+        <default>false</default>
+        <label>Event Planning</label>
+    </customValue>
+    <customValue>
+        <fullName>Landscaping</fullName>
+        <default>false</default>
+        <label>Landscaping</label>
+    </customValue>
+    <masterLabel>Volunteer Skills</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

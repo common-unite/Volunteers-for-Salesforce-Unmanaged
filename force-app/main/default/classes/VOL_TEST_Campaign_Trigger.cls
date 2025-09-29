@@ -1,0 +1,58 @@
+/*
+    Copyright (c) 2016, Salesforce.org
+    All rights reserved.
+    
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+    
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of Salesforce.org nor the names of
+      its contributors may be used to endorse or promote products derived
+      FROM this software without specific prior written permission.
+ 
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
+    FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE 
+    COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+    INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+    BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN 
+    ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+    POSSIBILITY OF SUCH DAMAGE.
+*/
+
+@IsTest
+private class VOL_TEST_Campaign_Trigger {
+
+    @IsTest
+    static void myUnitTest() {
+
+        // test creating a single campaign.
+        Campaign cmp = new Campaign(RecordTypeId=VOL_SharedCode.recordtypeIdVolunteersCampaign, Name='Test Campaign', IsActive=true);
+        insert cmp;
+        List<CampaignMemberStatus> listCMS = [SELECT Id FROM CampaignMemberStatus WHERE CampaignId = :cmp.Id];
+        System.assert(listCMS.size() == 5);
+        
+        // test creating multiple campaigns.
+        List<Campaign> listCmp = new List<Campaign>();
+        for (Integer i = 0; i < 10; i++) {
+            Campaign cmpI = new Campaign(RecordTypeId=VOL_SharedCode.recordtypeIdVolunteersCampaign, Name='Test Campaign' + i, IsActive=true);
+            listCmp.add(cmpI);
+        }
+        insert listCmp;
+        Set<Id> setCmpId = new Set<Id>();
+        for (Campaign cmpT : listCmp) {
+            setCmpId.add(cmpT.Id);
+        }
+        List<CampaignMemberStatus> listCMS2 = [SELECT Id FROM CampaignMemberStatus WHERE CampaignId IN :setCmpId];
+        System.assert(listCMS2.size() == 50);
+        
+    }
+}
